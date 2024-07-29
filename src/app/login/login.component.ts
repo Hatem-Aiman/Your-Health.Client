@@ -25,7 +25,7 @@ export class LoginComponent {
         ...this.loginForm.value,
         useCookies: true
       };
-      this.http.post<{ token: string }>('https://your-api-url.com/login', formData)
+      this.http.post<{ token: string }>('https://localhost:7239/login', formData)
         .subscribe(
           response => {
             console.log('Login successful', response);

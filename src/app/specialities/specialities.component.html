@@ -1,1 +1,40 @@
-<p>specialities works!</p>
+<div class="container mt-5">
+  <h2 class="mb-4">Specialities</h2>
+
+  <!-- Search Bar and Button -->
+  <div class="d-flex mb-4">
+    <input
+      type="text"
+      class="form-control me-2"
+      placeholder="Search Specialities..."
+      [(ngModel)]="searchTerm"
+    />
+    <button
+      class="btn btn-primary"
+      (click)="loadAllSpecialities()">
+      Search
+    </button>
+  </div>
+
+  <!-- Specialities List -->
+  <div class="row">
+    <div *ngFor="let speciality of filteredSpecialities" class="col-md-12 mb-4">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">{{ speciality.specialityName }}</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let doctor of speciality.doctors" class="list-group-item">
+              <div>
+                <h6 class="mb-1">{{ doctor.docFirstName }} {{ doctor.docLastName }}</h6>
+                <p class="mb-1">{{ doctor.email }}</p>
+                <small class="text-muted">Phone: {{ doctor.phone }}</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
