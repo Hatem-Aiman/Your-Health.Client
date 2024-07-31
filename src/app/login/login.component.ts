@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  errorMessage: string = '';
+  statusMessage: string = '';
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.loginForm = this.fb.group({
@@ -30,11 +30,11 @@ export class LoginComponent {
           response => {
             console.log('Login successful', response);
             localStorage.setItem('token', response.token);
-            this.errorMessage = ''; // Clear any previous error messages
+            this.statusMessage = 'Login successful'; // Clear any previous error messages
           },
           error => {
             console.error('Login failed', error);
-            this.errorMessage = 'Invalid email or password. Please try again.';
+            this.statusMessage = 'Invalid email or password. Please try again.';
           }
         );
     }

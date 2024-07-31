@@ -1,1 +1,45 @@
-<p>patients works!</p>
+<div class="container mt-5">
+  <h2 class="mb-4">Patients</h2>
+
+  <div class="d-flex mb-4">
+    <input
+      type="text"
+      class="form-control me-2"
+      placeholder="Search Patients..."
+      [(ngModel)]="searchTerm"
+    />
+    <button
+      class="btn btn-primary"
+      (click)="loadAllPatients()">
+      Search
+    </button>
+  </div>
+<div *ngIf="filteredPatients.length > 0; else elseBlock">
+  <div class="row">
+    <div *ngFor="let patient of filteredPatients" class="col-md-12 mb-4">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">{{ patient.patientName }}</h5>
+          <h6 class="text-muted">Phone: {{patient.phone}}</h6>
+          <p class="mb-1">{{patient.isDiagnosed}}</p>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+              <div>
+                <h6 class="mb-1">{{ patient.doctor.docFirstName }} {{ patient.doctor.docLastName }}</h6>
+                <p class="mb-1">{{ patient.doctor.email }}</p>
+                <small class="text-muted">Phone: {{ patient.doctor.phone }}</small>
+              </div>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="rounded-pill text-muted" style="border: 2px solid rgb(0, 153, 255); padding: 10px;">No Patients to display</div>
+  </div>
+</ng-template>
+

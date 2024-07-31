@@ -26,7 +26,7 @@ export class RegisterComponent {
         .subscribe(
           response => {
             console.log('Registration successful', response);
-            this.errorMessage = ''; // Clear any previous error messages
+            this.errorMessage = 'Registration successful'; // Clear any previous error messages
           },
           error => {
             console.error('Registration failed', error);

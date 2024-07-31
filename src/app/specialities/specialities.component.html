@@ -1,7 +1,6 @@
 <div class="container mt-5">
   <h2 class="mb-4">Specialities</h2>
 
-  <!-- Search Bar and Button -->
   <div class="d-flex mb-4">
     <input
       type="text"
@@ -15,8 +14,7 @@
       Search
     </button>
   </div>
-
-  <!-- Specialities List -->
+<div *ngIf="filteredSpecialities.length > 0; else elseBlock">
   <div class="row">
     <div *ngFor="let speciality of filteredSpecialities" class="col-md-12 mb-4">
       <div class="card">
@@ -34,7 +32,14 @@
             </li>
           </ul>
         </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<ng-template #elseBlock>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="rounded-pill text-muted" style="border: 2px solid rgb(0, 153, 255); padding: 10px;">No Specialities to display</div>
+  </div>
+ </ng-template>
+

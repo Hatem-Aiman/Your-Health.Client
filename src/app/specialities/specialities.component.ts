@@ -19,10 +19,10 @@ export class SpecialitiesComponent implements OnInit {
 
   loadAllSpecialities(): void {
     if (!this.searchTerm){
-    this.specialitiesService.getSpecialities().subscribe(
+      this.specialitiesService.getSpecialities().subscribe(
       (data) => {
         this.specialities = data;
-        this.filteredSpecialities = data; // Initialize filteredSpecialities
+        this.filteredSpecialities = data;
       },
       (error) => {
         console.error('Failed to fetch specialities', error);});
@@ -33,5 +33,5 @@ export class SpecialitiesComponent implements OnInit {
         (error) => {console.error('Failed to search specialities', error);}
     )}
   }
-
 }
+
