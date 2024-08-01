@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="mb-3">
+          <label for="DocFirstName" class="form-label">First Name</label>
+          <input type="text" id="DocFirstName" formControlName="DocFirstName" class="form-control" autocomplete="off" [ngClass]="{'is-invalid': doctorForm.get('DocFirstName')?.invalid && doctorForm.get('DocFirstName')?.touched}">
+          <div *ngIf="doctorForm.get('DocFirstName')?.invalid && doctorForm.get('DocFirstName')?.touched" class="invalid-feedback">
+            Please enter a valid first name.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="DocLastName" class="form-label">Last Name</label>
+          <input type="text" id="DocLastName" formControlName="DocLastName" class="form-control" autocomplete="off" [ngClass]="{'is-invalid': doctorForm.get('DocLastName')?.invalid && doctorForm.get('DocLastName')?.touched}">
+          <div *ngIf="doctorForm.get('DocLastName')?.invalid && doctorForm.get('DocLastName')?.touched" class="invalid-feedback">
+            Please enter a valid last name.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" formControlName="email" class="form-control" autocomplete="off" [ngClass]="{'is-invalid': doctorForm.get('email')?.invalid && doctorForm.get('email')?.touched}">
+          <div *ngIf="doctorForm.get('email')?.invalid && doctorForm.get('email')?.touched" class="invalid-feedback">
+            Please enter a valid email.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" formControlName="phone" class="form-control" autocomplete="off" [ngClass]="{'is-invalid': doctorForm.get('phone')?.invalid && doctorForm.get('phone')?.touched}">
+          <div *ngIf="doctorForm.get('phone')?.invalid && doctorForm.get('phone')?.touched" class="invalid-feedback">
+            Please enter a valid phone number.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="speciality" class="form-label">Speciality</label>
+          <select id="speciality" formControlName="speciality" class="form-control" autocomplete="off" [ngClass]="{'is-invalid': doctorForm.get('speciality')?.invalid && doctorForm.get('speciality')?.touched}">
+            <option value="">Select Speciality</option>
+            <option *ngFor="let option of specialities" [value]="option.specialityName">{{ option.specialityName }}</option>
+          </select>
+          <div *ngIf="doctorForm.get('speciality')?.invalid && doctorForm.get('speciality')?.touched" class="invalid-feedback">
+            Please select a valid speciality.
+          </div>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="Message" class="alert alert-success">
+          {{ Message }}
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="doctorForm.invalid">Add Doctor</button>
+      </form>
+    </div>
+  </div>
+</div>

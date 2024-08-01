@@ -1,1 +1,54 @@
-<p>appointments works!</p>
+<div class="container mt-5">
+  <h2 class="mb-4">Appointments</h2>
+
+  <!-- <div class="d-flex mb-4">
+    <input
+      type="text"
+      class="form-control me-2"
+      placeholder="Search Appointments..."
+      [(ngModel)]="searchTerm"
+    />
+    <button
+      class="btn btn-primary"
+      (click)="loadAllAppointments()">
+      Search
+    </button>
+  </div> -->
+
+<div *ngIf="filteredAppointments.length > 0; else elseBlock">
+  <div class="row">
+    <div *ngFor="let Appointment of filteredAppointments" class="col-md-12 mb-4">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">{{ Appointment.date }} {{Appointment.isConfirmed}} {{Appointment.description}}
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <div>Assigned Doctor</div>
+              <div>
+                <h6 class="mb-1">{{ Appointment.doctor.docFirstName }} {{ Appointment.doctor.docLastName }}</h6>
+                <p class="mb-1">{{ Appointment.doctor.email }}</p>
+                <small class="text-muted">Phone: {{ Appointment.doctor.phone }}</small>
+              </div>
+          </ul>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <div>Assigned Patient</div>
+              <div>
+                <h6 class="mb-1">{{ Appointment.patient.patientName }} {{ Appointment.patient.phone }}</h6>
+                <p class="mb-1">{{ Appointment.patient.isDiagnosed }}</p>
+              </div>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #elseBlock>
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="rounded-pill text-muted" style="border: 2px solid rgb(0, 153, 255); padding: 10px;">No Appointments to display</div>
+  </div>
+ </ng-template>

@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href="#">Home</a>
+          <a class="nav-link active " role="button" aria-current="page" href="#">Home</a>
         </li>
         <div class="nav-item dropdown d-flex text-white " >
-          <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+          <a class="nav-link dropdown-toggle active"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
             Dashboard
           </a>
           <ul class="dropdown-menu">
@@ -21,8 +21,17 @@
           </ul>
         </div>
         <li class="nav-item">
-          <a class="nav-link" href="/manage">Manage</a>
-        </li>
+          <div class="nav-item dropdown d-flex text-white " >
+            <a class="nav-link dropdown-toggle active"  href="/manage" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+              Manage
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/">Appointments</a></li>
+              <li><a class="dropdown-item" href="/manage-doctor">Doctors</a></li>
+              <li><a class="dropdown-item" href="/">Patients</a></li>
+              <li><a class="dropdown-item" href="/">Specialities</a></li>
+            </ul>
+          </div>        </li>
       </ul>
     </div>
     <div class="nav-item dropdown d-flex text-white " >

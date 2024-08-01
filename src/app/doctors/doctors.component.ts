@@ -7,9 +7,8 @@ import { DoctorsService } from '../../Services/Doctors.service';
   styleUrls: ['./doctors.component.css']
 })
 export class DoctorsComponent implements OnInit {
-  Doctors: any[] = [];
   filteredDoctors: any[] = [];
-  searchTerm: string = '';
+  searchTerm: number = 0;
 
   constructor(private DoctorsService: DoctorsService) { }
 
@@ -18,19 +17,10 @@ export class DoctorsComponent implements OnInit {
   }
 
   loadAllDoctors(): void {
-    if (!this.searchTerm){
-      this.DoctorsService.getDoctors().subscribe(
-      (data) => {
-        this.Doctors = data;
-        this.filteredDoctors = data;
-      },
-      (error) => {
-        console.error('Failed to fetch Doctors', error);});
-      }
-    else{
-      this.DoctorsService.searchDoctors(this.searchTerm).subscribe(
-        (data) => {this.filteredDoctors = data; },
-        (error) => {console.error('Failed to search Doctors', error);}
-    )}
+      this.DoctorsService.getDoctors(this.searchTerm).subscribe({
+      next : data => this.filteredDoctors = data,
+      error : err => console.log("error" , err)
+      });
+      console.log(this.filteredDoctors)
   }
 }

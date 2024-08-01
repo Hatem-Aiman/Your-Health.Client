@@ -1,3 +1,4 @@
+import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManageComponent } from './manage/manage.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'manage', component: ManageComponent },
   { path: 'register', component: RegisterComponent  },
   { path: 'login', component: LoginComponent },
+  { path: 'manage-doctor', component: ManageDoctorComponent}
 ];
 
 @NgModule({

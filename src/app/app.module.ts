@@ -16,6 +16,7 @@ import { PatientsComponent } from './patients/patients.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
 import { CommonModule } from '@angular/common';
+import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CommonModule } from '@angular/common';
     DoctorsComponent,
     PatientsComponent,
     AppointmentsComponent,
-    SpecialitiesComponent
+    SpecialitiesComponent,
+    ManageDoctorComponent
   ],
   imports: [
     BrowserModule,

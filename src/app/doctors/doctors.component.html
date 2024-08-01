@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <h2 class="mb-4">Doctors</h2>
 
-  <div class="d-flex mb-4">
+  <!-- <div class="d-flex mb-4">
     <input
       type="text"
       class="form-control me-2"
@@ -13,7 +13,8 @@
       (click)="loadAllDoctors()">
       Search
     </button>
-  </div>
+  </div> -->
+  
 <div *ngIf="filteredDoctors.length > 0; else elseBlock">
   <div class="row">
     <div *ngFor="let Doctor of filteredDoctors" class="col-md-12 mb-4">
