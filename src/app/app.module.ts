@@ -17,6 +17,7 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
 import { CommonModule } from '@angular/common';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
     PatientsComponent,
     AppointmentsComponent,
     SpecialitiesComponent,
-    ManageDoctorComponent
+    ManageDoctorComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
