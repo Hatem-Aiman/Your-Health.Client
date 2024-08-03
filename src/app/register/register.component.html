@@ -16,6 +16,9 @@
             Password must be at least 6 characters long.
           </div>
         </div>
+        <div *ngIf="statusMessage" class="alert alert-success">
+          {{ statusMessage }}
+        </div>
         <div *ngIf="errorMessage" class="alert alert-danger">
           {{ errorMessage }}
         </div>

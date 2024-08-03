@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class RegisterComponent {
   registerForm: FormGroup;
   errorMessage: string = '';
+  statusMessage: string = '';
+
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.registerForm = this.fb.group({
@@ -26,7 +28,7 @@ export class RegisterComponent {
         .subscribe(
           response => {
             console.log('Registration successful', response);
-            this.errorMessage = 'Registration successful'; // Clear any previous error messages
+            this.statusMessage = 'Registration successful'; // Clear any previous error messages
           },
           error => {
             console.error('Registration failed', error);
