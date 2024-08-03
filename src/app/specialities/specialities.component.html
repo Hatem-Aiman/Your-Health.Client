@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h2 class="mb-4">Specialities</h2>
+  <h2 class="mb-4" style="text-align: center; border: 2px solid rgb(0, 153, 255); padding: 10px;">Specialities</h2>
 <!--
   <div class="d-flex mb-4">
     <input
@@ -15,7 +15,7 @@
     </button>
   </div> -->
 
-  
+
 <div *ngIf="filteredSpecialities.length > 0; else elseBlock">
   <div class="row">
     <div *ngFor="let speciality of filteredSpecialities" class="col-md-12 mb-4">

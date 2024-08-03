@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h2 class="mb-4">Doctors</h2>
+  <h1 class="mb-4 align-items-center justify-content-center" style="text-align: center; border: 2px solid rgb(0, 153, 255); padding: 10px;">Doctors</h1>
 
   <!-- <div class="d-flex mb-4">
     <input
@@ -14,7 +14,7 @@
       Search
     </button>
   </div> -->
-  
+
 <div *ngIf="filteredDoctors.length > 0; else elseBlock">
   <div class="row">
     <div *ngFor="let Doctor of filteredDoctors" class="col-md-12 mb-4">
@@ -41,4 +41,4 @@
   <div class="d-flex align-items-center justify-content-center">
     <div class="rounded-pill text-muted" style="border: 2px solid rgb(0, 153, 255); padding: 10px;">No Doctors to display</div>
   </div>
- </ng-template>
+</ng-template>
