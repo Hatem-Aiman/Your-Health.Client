@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1 class="text-center">Add New Speciality</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form [formGroup]="SpecialityForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+        <div class="mb-3">
+          <label for="SpecialityName" class="form-label">Speciality</label>
+          <input type="text" id="SpecialityName" formControlName="SpecialityName" class="form-control" autocomplete="off" [ngClass]="{'is-invalid': SpecialityForm.get('SpecialityName')?.invalid && SpecialityForm.get('SpecialityName')?.touched}">
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="Message" class="alert alert-success">
+          {{ Message }}
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="SpecialityForm.invalid">Add Speciality</button>
+      </form>
+    </div>
+  </div>
+</div>

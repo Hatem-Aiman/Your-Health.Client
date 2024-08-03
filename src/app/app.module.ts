@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ManageComponent } from './manage/manage.component';
@@ -18,6 +17,7 @@ import { SpecialitiesComponent } from './specialities/specialities.component';
 import { CommonModule } from '@angular/common';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { FooterComponent } from './footer/footer.component';
+import { ManagespecialityComponent } from './manage-speciality/manage-speciality.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     AppointmentsComponent,
     SpecialitiesComponent,
     ManageDoctorComponent,
-    FooterComponent
+    FooterComponent,
+    ManagespecialityComponent
   ],
   imports: [
     BrowserModule,

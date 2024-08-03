@@ -10,6 +10,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientsComponent } from './patients/patients.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
+import { ManagespecialityComponent } from './manage-speciality/manage-speciality.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,7 +22,9 @@ const routes: Routes = [
   { path: 'manage', component: ManageComponent },
   { path: 'register', component: RegisterComponent  },
   { path: 'login', component: LoginComponent },
-  { path: 'manage-doctor', component: ManageDoctorComponent}
+  { path: 'manage-doctor', component: ManageDoctorComponent},
+  { path: 'manage-speciality', component: ManagespecialityComponent}
+
 ];
 
 @NgModule({
