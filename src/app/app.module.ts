@@ -18,7 +18,13 @@ import { CommonModule } from '@angular/common';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { FooterComponent } from './footer/footer.component';
 import { ManagespecialityComponent } from './manage-speciality/manage-speciality.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { FloatLabel, FloatLabelModule } from 'primeng/floatlabel';
+import { CardModule } from 'primeng/card';
+import { MegaMenu, MegaMenuModule } from 'primeng/megamenu';
+import { AvatarModule } from 'primeng/avatar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +48,14 @@ import { ManagespecialityComponent } from './manage-speciality/manage-speciality
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    DropdownModule,
+    FloatLabelModule,
+    CardModule,
+    MegaMenuModule,
+    AvatarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { MegaMenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +8,67 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+// items: MegaMenuItem[]|undefined;
+// changeComponent() {
+//   console.log('changeComponent', this.selected.label);
+// }
 
+// manage = [
+//   { label: 'Appointments', route: 'manage-appointment' },
+//   { label: 'Doctors', route: 'manage-doctor' },
+//   { label: 'specialities', route: 'manage-speciality' },
+//   { label: 'Patients', route: 'manage-patient' }
+// ];
+// selected: any;
+
+// constructor(private router: Router) {}
+
+//   onSelect(event: any) {
+//     const selectedItem = event.value;
+//     if (selectedItem && selectedItem.route) {
+//       this.router.navigate([selectedItem.route]);
+//     }
+//  }
+items: MegaMenuItem[] | undefined;
+
+ngOnInit() {
+this.items = [
+    {
+        label: 'Dashborad',
+        root: true,
+        items: [
+            [
+            {
+            items: [
+                { label: 'Doctors', route:'/doctors'},
+                { label: 'Patients', route:'patients'},
+                { label: 'Appointments', route:'appointments'},
+                { label: 'Specialities', route:'specialities'}
+            ]
+            }
+            ],
+        ]
+    },
+    {
+        label: 'Manage',
+        root: true,
+        items: [
+            [
+            {
+            items: [
+                { label: 'Doctors', route:'/manage-doctor'},
+                { label: 'Patients', route:'patients'},
+                { label: 'Appointments', route:'appointments'},
+                { label: 'Specialities', route:'manage-speciality'}
+            ]
+            }
+            ],
+        ]
+    },
+    {
+        label: 'Contact',
+        root: true
+    }
+];
+}
 }

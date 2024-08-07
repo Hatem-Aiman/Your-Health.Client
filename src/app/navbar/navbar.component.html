@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+<!-- <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Your Health</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,18 +20,20 @@
             <li><a class="dropdown-item" href="/specialities">Specialities</a></li>
           </ul>
         </div>
+        <div class="card flex justify-content-center">
+          <p-floatLabel>
+            <p-dropdown
+              [options]="manage"
+              [(ngModel)]="selected"
+              (onChange)="onSelect($event)"
+              inputId="float-label"
+              optionLabel="label"
+            ></p-dropdown>
+            <label for="float-label">Select</label>
+          </p-floatLabel>
+      </div>
         <li class="nav-item">
-          <div class="nav-item dropdown d-flex text-white " >
-            <a class="nav-link dropdown-toggle active"  href="/manage" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-              Manage
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/">Appointments</a></li>
-              <li><a class="dropdown-item" href="/manage-doctor">Doctors</a></li>
-              <li><a class="dropdown-item" href="/">Patients</a></li>
-              <li><a class="dropdown-item" href="/manage-speciality">Specialities</a></li>
-            </ul>
-          </div>        </li>
+        </li>
       </ul>
     </div>
     <div class="nav-item dropdown d-flex text-white " >
@@ -44,4 +46,22 @@
       </ul>
     </div>
     </div>
-</nav>
+</nav> -->
+
+
+<p-megaMenu [model]="items">
+  <ng-template pTemplate="item" let-item>
+      <ng-container *ngIf="item.route; else elseBlock">
+          <a [routerLink]="item.route" class="p-menuitem-link btn btn-primary m-2">
+              <span [class]="item.icon"></span>
+              <span class="ml-2">{{ item.label }}</span>
+          </a>
+      </ng-container>
+      <ng-template #elseBlock>
+          <a [href]="item.url" class="p-menuitem-link btn btn-primary m-2">
+              <span [class]="item.icon"></span>
+              <span class="ml-2">{{ item.label }}</span>
+          </a>
+      </ng-template>
+  </ng-template>
+</p-megaMenu>
