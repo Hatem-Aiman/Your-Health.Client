@@ -68,7 +68,23 @@ this.items = [
     {
         label: 'Contact',
         root: true
-    }
+    },
+    {
+      label: 'Account',
+      root: true,
+      items: [
+          [
+          {
+          items: [
+              { icon: 'pi pi-sign-in',label: 'Login', route:'/login'},
+              { icon: 'pi pi-user-plus',label: 'Register', route:'/register'},
+          ]
+          }
+          ],
+      ]
+  },
 ];
+
+
 }
 }

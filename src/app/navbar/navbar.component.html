@@ -49,8 +49,8 @@
 </nav> -->
 
 
-<p-megaMenu [model]="items">
-  <ng-template pTemplate="item" let-item>
+<p-megaMenu [model]="items" class="sticky-top">
+  <ng-template pTemplate="item" let-item class="d-flex">
       <ng-container *ngIf="item.route; else elseBlock">
           <a [routerLink]="item.route" class="p-menuitem-link btn btn-primary m-2">
               <span [class]="item.icon"></span>
@@ -63,5 +63,5 @@
               <span class="ml-2">{{ item.label }}</span>
           </a>
       </ng-template>
-  </ng-template>
+      </ng-template>
 </p-megaMenu>
