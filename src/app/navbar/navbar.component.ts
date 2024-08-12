@@ -33,6 +33,10 @@ items: MegaMenuItem[] | undefined;
 
 ngOnInit() {
 this.items = [
+  {
+    label: 'Your-Health',
+    root: true,
+  },
     {
         label: 'Dashborad',
         root: true,

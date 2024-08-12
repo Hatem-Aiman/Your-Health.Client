@@ -1,43 +1,29 @@
 <div class="container mt-5">
   <h1 class="mb-4 align-items-center justify-content-center" style="text-align: center; border: 2px solid rgb(0, 153, 255); padding: 10px;">Doctors</h1>
-
-  <!-- <div class="d-flex mb-4">
-    <input
-      type="text"
-      class="form-control me-2"
-      placeholder="Search Doctors..."
-      [(ngModel)]="searchTerm"
-    />
-    <button
-      class="btn btn-primary"
-      (click)="loadAllDoctors()">
-      Search
-    </button>
-  </div> -->
-
-<div *ngIf="filteredDoctors.length > 0; else elseBlock">
-  <div class="row">
-    <div *ngFor="let Doctor of filteredDoctors" class="col-md-4 mb-4">
-      <p-card header="{{Doctor.docFirstName}} {{Doctor.docLastName}}" subheader="{{Doctor.specialityName}}" [style]="{ width: '100%' }">
-        <ng-template pTemplate="header">
-          <img alt="Card" src="https://t4.ftcdn.net/jpg/06/32/90/79/360_F_632907920_9mUAJdojy5L613RzjvC5UJZfddYFF2iO.jpg" />
-        </ng-template>
-        <p class="pi pi-user"> {{Doctor.email}}</p>
-        <br>
-        <p class="pi pi-phone"> {{Doctor.phone}}</p>
-        <ng-template pTemplate="footer">
-          <div class="flex gap-3 d-flex" >
-            <p-button label="Edit" severity="secondary" class="w-full " styleClass="w-full"/>
-            <p-button label="Patients" severity="primary" class="w-full" styleClass="w-full"/>
-            <p-button label="Delete"  severity="danger"  class="w-full d-flex flex-row-reverse" styleClass="w-full"/>
-          </div>
-        </ng-template>
-      </p-card>
+  <div *ngIf="filteredDoctors.length > 0; else elseBlock">
+    <div class="row">
+      <div *ngFor="let Doctor of filteredDoctors" class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
+        <p-card header="{{Doctor.docFirstName}} {{Doctor.docLastName}}" subheader="{{Doctor.specialityName}}" [style]="{ width: '100%' }" >
+          <ng-template pTemplate="header">
+            <img alt="Card" src="https://t4.ftcdn.net/jpg/06/32/90/79/360_F_632907920_9mUAJdojy5L613RzjvC5UJZfddYFF2iO.jpg"  />
+          </ng-template>
+          <p class="pi pi-user"> {{Doctor.email}}</p>
+          <br>
+          <p class="pi pi-phone"> {{Doctor.phone}}</p>
+          <ng-template pTemplate="footer">
+            <div class="flex gap-3 d-flex">
+              <p-button label="Edit" severity="secondary" class="w-full" styleClass="w-full mb-2"/>
+              <p-button label="Patients" severity="primary" class="w-full" styleClass="w-full mb-2"/>
+              <p-button label="Delete" severity="danger" class="w-full d-flex flex-row-reverse" styleClass="w-full mb-2"/>
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
     </div>
   </div>
+  <ng-template #elseBlock>
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="rounded-pill text-muted" style="border: 2px solid rgb(0, 153, 255); padding: 10px;">No Doctors to display</div>
+    </div>
+  </ng-template>
 </div>
-<ng-template #elseBlock>
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="rounded-pill text-muted" style="border: 2px solid rgb(0, 153, 255); padding: 10px;">No Doctors to display</div>
-  </div>
-</ng-template>
