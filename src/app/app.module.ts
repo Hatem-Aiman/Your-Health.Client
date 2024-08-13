@@ -25,6 +25,10 @@ import { FloatLabel, FloatLabelModule } from 'primeng/floatlabel';
 import { CardModule } from 'primeng/card';
 import { MegaMenu, MegaMenuModule } from 'primeng/megamenu';
 import { AvatarModule } from 'primeng/avatar';
+import { DividerModule } from 'primeng/divider';
+import { CheckboxModule } from 'primeng/checkbox';
+import {StyleClassModule} from 'primeng/styleclass';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +59,10 @@ import { AvatarModule } from 'primeng/avatar';
     FloatLabelModule,
     CardModule,
     MegaMenuModule,
-    AvatarModule
+    AvatarModule,
+    DividerModule,
+    CheckboxModule,
+    StyleClassModule
   ],
   providers: [],
   bootstrap: [AppComponent]

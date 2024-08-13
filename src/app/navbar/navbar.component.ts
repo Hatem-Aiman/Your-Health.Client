@@ -60,10 +60,10 @@ this.items = [
             [
             {
             items: [
-                { label: 'Doctors', route:'/manage-doctor'},
-                { label: 'Patients', route:'patients'},
-                { label: 'Appointments', route:'appointments'},
-                { label: 'Specialities', route:'manage-speciality'}
+                { label: ' Doctors', route:'/manage-doctor'},
+                { label: ' Patients', route:'patients'},
+                { label: ' Appointments', route:'appointments'},
+                { label: ' Specialities', route:'manage-speciality'}
             ]
             }
             ],
@@ -80,8 +80,8 @@ this.items = [
           [
           {
           items: [
-              { icon: 'pi pi-sign-in',label: 'Login', route:'/login'},
-              { icon: 'pi pi-user-plus',label: 'Register', route:'/register'},
+              { icon: 'pi pi-sign-in',label: ' Login', route:'/login'},
+              { icon: 'pi pi-user-plus',label: ' Register', route:'/register'},
           ]
           }
           ],

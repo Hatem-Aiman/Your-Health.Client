@@ -29,7 +29,7 @@ export class ManagespecialityComponent {
 
   this.specs = this.SpecialityForm.value;
       const params = new HttpParams({ fromObject: this.specs });
-      this.http.post('https://localhost:7239/specialities/CreateSpeciality', null, { params })
+      this.http.post('https://localhost:8084/specialities/CreateSpeciality', null, { params })
         .subscribe(
           response => {
         console.log('Creation successful', response);

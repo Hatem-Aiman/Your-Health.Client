@@ -34,7 +34,7 @@ export class ManageDoctorComponent {
 
   this.docdata = this.doctorForm.value;
       const params = new HttpParams({ fromObject: this.docdata });
-      this.http.post('https://localhost:7239/Doctors/CreateDoctor', null, { params })
+      this.http.post('https://localhost:8084/Doctors/CreateDoctor', null, { params })
         .subscribe(
           response => {
         console.log('Creation successful', response);

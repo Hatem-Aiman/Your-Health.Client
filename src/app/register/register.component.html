@@ -1,3 +1,6 @@
+<div class="container d-flex align-items-center justify-content-center h1">
+  Register Account
+</div>
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -22,8 +25,20 @@
         <div *ngIf="errorMessage" class="alert alert-danger">
           {{ errorMessage }}
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+          <i class="pi pi-sign-in"></i>  Register
+        </button>
+        <p-divider layout="vertical" styleClass="hidden md:flex" class="text-center">
+          <b>Already Have An Account?</b>
+          <div>
+            <button class="btn btn-success" routerLink="/login">
+              <i class="pi pi-user-plus"></i> Login
+            </button>
+          </div>
+        </p-divider>
       </form>
     </div>
-  </div>
 </div>
+
+
+

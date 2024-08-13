@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PatientsService {
-  private apiUrl = 'https://localhost:7239/Patients/GetPatients';
-  private searchUrl = 'https://localhost:7239/Patients/GetPatients/1';
+  private apiUrl = 'http://localhost:8084/Patients/GetPatients';
+  private searchUrl = 'http://localhost:8084/Patients/GetPatients/1';
 
   constructor(private http: HttpClient) {}
 
