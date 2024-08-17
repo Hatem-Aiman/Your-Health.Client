@@ -11,19 +11,23 @@ import { PatientsComponent } from './patients/patients.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { SpecialitiesComponent } from './specialities/specialities.component';
 import { ManagespecialityComponent } from './manage-speciality/manage-speciality.component';
+import { ContactComponent } from './contact/contact.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'doctors', component: DoctorsComponent },
   { path: 'patients', component: PatientsComponent },
   { path: 'appointments', component: AppointmentsComponent },
   { path: 'specialities', component: SpecialitiesComponent },
-  {path:'home', component: HomeComponent},
+  { path:'home', component: HomeComponent},
   { path: 'manage', component: ManageComponent },
   { path: 'register', component: RegisterComponent  },
   { path: 'login', component: LoginComponent },
   { path: 'manage-doctor', component: ManageDoctorComponent},
-  { path: 'manage-speciality', component: ManagespecialityComponent}
+  { path: 'manage-speciality', component: ManagespecialityComponent},
+  { path: 'contact', component: ContactComponent},
+  { path: 'account', component: AccountComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 
 ];
 

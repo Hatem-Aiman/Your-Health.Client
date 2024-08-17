@@ -28,6 +28,10 @@ import { AvatarModule } from 'primeng/avatar';
 import { DividerModule } from 'primeng/divider';
 import { CheckboxModule } from 'primeng/checkbox';
 import {StyleClassModule} from 'primeng/styleclass';
+import { MenubarModule } from 'primeng/menubar';
+import { BadgeModule } from 'primeng/badge';
+import { ContactComponent } from './contact/contact.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import {StyleClassModule} from 'primeng/styleclass';
     SpecialitiesComponent,
     ManageDoctorComponent,
     FooterComponent,
-    ManagespecialityComponent
+    ManagespecialityComponent,
+    ContactComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,10 @@ import {StyleClassModule} from 'primeng/styleclass';
     AvatarModule,
     DividerModule,
     CheckboxModule,
-    StyleClassModule
+    StyleClassModule,
+    MenubarModule,
+    BadgeModule,
+    FloatLabelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
